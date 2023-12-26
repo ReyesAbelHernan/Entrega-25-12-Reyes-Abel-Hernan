@@ -13,20 +13,22 @@ class ProductManager {
     }
 
     addProduct(title,description,price,thumbnail,code,stock){
-        if (condition) {
-            const newProduct = {
-                id: this.product.length+1,
-                title,
-                description,
-                price,
-                thumbnail,
-                code,
-                stock
+        let search = this.product.find(product=>product.code==code)    
+            if (search!=code) {
+                const newProduct = {
+                    id: this.product.length+1,
+                    title,
+                    description,
+                    price,
+                    thumbnail,
+                    code,
+                    stock
+                }
+                this.product.push(newProduct) 
             }
-            this.product.push(newProduct) 
-        }
     }
 }
+
 
 const manager = new ProductManager();
 
